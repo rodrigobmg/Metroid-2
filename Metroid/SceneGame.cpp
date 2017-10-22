@@ -30,8 +30,8 @@ void SceneGame::LoadLevel(int level)
 
 	//simon = new Simon(3850, 100);
 
-	camera->viewport.y = 0;
-	//camera->viewport.x = 1780 * 2;
+	camera->viewport.y = 4050;
+	camera->viewport.x = 512;
 	///*camera->viewport.y = 1200;
 	//camera->viewport.x = 250;*/
 	//_gameScore = new GameScore(G_Device, 22, G_ScreenWidth, G_ScreenHeight);
@@ -95,7 +95,9 @@ void SceneGame::LoadStage(int stage)
 		qGameObject = new QGameObject("Resources/Maps/ObjectInMap.txt",
 			"Resources\\Maps\\QuadTree.txt");
 	}*/
-	camera->SetSizeMap(G_MaxSize, G_MinSize);
+	
+	//camera->SetSizeMap(G_MaxSize, G_MinSize);
+
 	/*switch (stage)
 	{
 	case 1:
@@ -431,15 +433,15 @@ void SceneGame::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int deltaTime)
 
 	/*qGameObject->Update(deltaTime);
 	simon->Update(deltaTime);*/
-	/*camera->UpdateCamera(simon->posX);
-	ChangeCamera(simon->GetDirectDoor());
+	//camera->UpdateCamera(simon->posX);
+	/*ChangeCamera(simon->GetDirectDoor());
 	simon->Collision(*(qGameObject->_staticObject), deltaTime);
 	simon->Collision(*(qGameObject->_dynamicObject), deltaTime);*/
-	/*qGameObject->Collision(deltaTime);
+	//qGameObject->Collision(deltaTime);
 	bg->Draw(camera);
 
-	qGameObject->Draw(camera);
-	simon->Draw(camera);*/
+	//qGameObject->Draw(camera);
+	//simon->Draw(camera);
 	/*#pragma region
 	{
 	if(_beginMoveCamera)
@@ -647,9 +649,9 @@ void SceneGame::LoadResources(LPDIRECT3DDEVICE9 d3ddv)
 
 	D3DXCreateSprite(d3ddv, &G_SpriteHandler);
 
-	Background = CreateSurfaceFromFile(d3ddv, BACKGROUND_FILE);
+	/*Background = CreateSurfaceFromFile(d3ddv, BACKGROUND_FILE);
 	BackgroundWhite = CreateSurfaceFromFile(d3ddv, BACKGROUND_WHITE_FILE);
-
+*/
 	HRESULT res = D3DXCreateSprite(d3ddv, &G_SpriteHandler);
 
 	//if (_levelNow != 0 && _stageNow != 0)

@@ -1,4 +1,4 @@
-#include "CSprite.h"
+﻿#include "CSprite.h"
 #include "Global.h"
 
 CSprite::CSprite()
@@ -136,6 +136,24 @@ void CSprite::DrawFlipY(int x, int y)
 	G_SpriteHandler->SetTransform(&oldMt);
 }
 
+void CSprite::DrawScale(int index, int x, int y)
+{
+	D3DXMATRIX oldMt;
+	G_SpriteHandler->GetTransform(&oldMt);
+
+	D3DXMATRIX newMt;
+	D3DXVECTOR2 center = D3DXVECTOR2(x + _texture->FrameWidth / 2, y + _texture->FrameHeight / 2);
+	D3DXVECTOR2 scale = D3DXVECTOR2(2, 2);
+
+	D3DXMatrixTransformation2D(&newMt, &center, 0.0f, &scale, NULL, 0.0f, NULL);
+	D3DXMATRIX finalMt = newMt * oldMt;
+	G_SpriteHandler->SetTransform(&finalMt);
+
+	this->DrawIndex(index, x, y);
+
+	G_SpriteHandler->SetTransform(&oldMt);
+}
+
 void CSprite::DrawRect(int X, int Y, RECT SrcRect)
 {
 	D3DXVECTOR3 position((float)X, (float)Y, 0);
@@ -150,9 +168,9 @@ void CSprite::DrawRect(int X, int Y, RECT SrcRect)
 
 void CSprite::DrawIndex(int index, int X, int Y)
 {
-	RECT srect;
+	RECT srect;		//con trỏ RECT chứa sprite được chọn để cắt
 
-	srect.left = (index % _texture->Cols)*(_texture->FrameWidth);// + 1;
+	srect.left = (index % _texture->Cols)*(_texture->FrameWidth);// + 1; texture->Cols: số cột của file Texture
 	srect.top = (index / _texture->Cols)*(_texture->FrameHeight);// + 1;
 	srect.right = srect.left + _texture->FrameWidth;
 	srect.bottom = srect.top + _texture->FrameHeight;// + 1;

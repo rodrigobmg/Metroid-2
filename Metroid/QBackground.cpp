@@ -9,24 +9,7 @@ QBackground::QBackground(int level)
 {
 	string fileName;
 	string _fileName;
-	/*switch (level)
-	{
-	case 1:
-	fileName = "Resources\\Maps\\Level1.txt";
-	break;
-	case 2:
-	fileName = "Resources\\Maps\\Level2.txt";
-	break;
-	case 3:
-	fileName = "Resources\\Maps\\Level3.txt";
-	break;
-	}*/
-	/*if (level == 1)
-	{
-		fileName = "Resources\\Maps\\lv2_1.txt";
-	}*/
 	fileName = "Resources\\Maps\\fullmap_map.txt";
-
 
 	ifstream map(fileName);
 
@@ -41,10 +24,6 @@ QBackground::QBackground(int level)
 
 		//Load file tile
 		bgSprite = new CSprite(new CTexture("Resources\\Maps\\fullmap.png", countTileWidth, countTileHeight, countTileWidth*countTileHeight), 1000);
-		/*if (level == 1)
-		{
-			bgSprite = new CSprite(new CTexture("Resources\\Maps\\lv2_1.png", count, 1, count), 1000);
-		}*/
 
 		/*switch (level)
 		{
@@ -87,10 +66,10 @@ void QBackground::Draw(CCamera *camera)
 	for (_itBegin = listTile->begin(); _itBegin != listTile->end(); _itBegin++)
 	{
 		Tile* obj = _itBegin->second;
-		D3DXVECTOR2 t = camera->Transform(obj->posX, obj->posY);
-		bgSprite->DrawIndex(obj->ID, t.x, t.y);
+		D3DXVECTOR2 t = camera->Transform(obj->posX, obj->posY);  
+		bgSprite->DrawIndex(obj->ID, t.x, t.y); //Vẽ từng ô tile
+		//bgSprite->DrawScale(obj->ID, t.x, t.y);
 	}
-
 }
 
 QBackground::~QBackground(void)

@@ -42,6 +42,9 @@ public:
 	//render with scale (1, -1)
 	void DrawFlipY(int x, int y);
 
+	//scale sprites
+	void DrawScale(int index, int x, int y);
+
 	//Render Rect of texture at (x,y)
 	void DrawRect(int X, int Y, RECT SrcRect);
 
