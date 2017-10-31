@@ -1,19 +1,10 @@
-﻿  QBackground.cpp
+﻿  SceneGame.cpp
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\domiter\documents\github\metroid\metroid\qbackground.cpp(35): warning C4101: '_obj': unreferenced local variable
-c:\users\domiter\documents\github\metroid\metroid\qbackground.cpp(61): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-  Generating Code...
-  Compiling...
-  main.cpp
+  QBackground.cpp
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\domiter\documents\github\metroid\metroid\scenemain.h(6): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  SceneMenu.cpp
-  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\domiter\documents\github\metroid\metroid\scenemain.h(6): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  SceneMain.cpp
-  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\domiter\documents\github\metroid\metroid\scenemain.h(6): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  SceneGame.cpp
+c:\users\domiter\documents\github\metroid\metroid\qbackground.cpp(44): warning C4101: '_obj': unreferenced local variable
+c:\users\domiter\documents\github\metroid\metroid\qbackground.cpp(70): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+  Global.cpp
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
   Generating Code...
   Metroid.vcxproj -> C:\Users\Domiter\Documents\GitHub\Metroid\Debug\Metroid.exe
