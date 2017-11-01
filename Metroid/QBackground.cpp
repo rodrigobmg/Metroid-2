@@ -12,7 +12,7 @@ QBackground::QBackground(int level)
 {
 	string fileName;
 	string _fileName;
-	fileName = "Resources\\Maps\\Stage1\\Stage1_Map.txt";
+	fileName = "Resources\\Maps\\demoMap\\Stage1_Map.txt";
 
 	ifstream map(fileName);
 
@@ -26,14 +26,14 @@ QBackground::QBackground(int level)
 		map >> countTileWidth >> countTileHeight;
 
 		//Load file tile
-		bgSprite = new CSprite(new CTexture("Resources\\Maps\\Stage1\\Stage1.png", countTileWidth, countTileHeight, countTileWidth*countTileHeight), 1000);
+		bgSprite = new CSprite(new CTexture("Resources\\Maps\\demoMap\\demoMap.png", countTileWidth, countTileHeight, countTileWidth*countTileHeight), 1);
 
 		map >> countHeight >> countWidth;
 		int id = 0;
 		listTile = new std::map<int, Tile*>();
 
 		Tile* _obj;
-		for (int i = countHeight - 1; i > 0; i--)
+		for (int i = countHeight; i > 0; i--)
 		{
 			for (int j = 0; j < countWidth; j++)
 			{
@@ -58,7 +58,7 @@ void QBackground::Draw(CCamera *camera)
 	{
 		Tile* obj = _itBegin->second;
 		D3DXVECTOR2 t = camera->Transform(obj->posX, obj->posY);  
-		bgSprite->DrawIndex(obj->ID, t.x, t.y); //Vẽ từng ô tile
+		bgSprite->DrawIndex(obj->idTile, t.x, t.y); //Vẽ từng ô tile
 		//bgSprite->DrawScale(obj->ID, t.x, t.y);
 	}
 }

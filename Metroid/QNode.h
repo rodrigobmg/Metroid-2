@@ -9,10 +9,9 @@ using namespace std;
 class QNode
 {
 public:
-	int posX;
-	int posY;
-	int width;
-	int height;
+	int left;
+	int top;
+	int size;
 	list<int> listObject;
 	QNode *leftTop;
 	QNode *rightTop;
@@ -21,7 +20,7 @@ public:
 
 	void Insert(int key);
 	QNode(void);
-	QNode(int, int, int, int, list<int>);
+	QNode(int, int, int, list<int>);
 	QNode(const QNode &);
 	~QNode(void);
 };

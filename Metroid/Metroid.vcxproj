@@ -153,15 +153,19 @@
     <ClCompile Include="CSprite.cpp" />
     <ClCompile Include="CText.cpp" />
     <ClCompile Include="CTexture.cpp" />
+    <ClCompile Include="DynamicObject.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="QBackground.cpp" />
     <ClCompile Include="QNode.cpp" />
+    <ClCompile Include="Samus.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneGame.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="SceneMenu.cpp" />
+    <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
@@ -171,14 +175,18 @@
     <ClInclude Include="CSprite.h" />
     <ClInclude Include="CText.h" />
     <ClInclude Include="CTexture.h" />
+    <ClInclude Include="DynamicObject.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="QBackground.h" />
     <ClInclude Include="QNode.h" />
+    <ClInclude Include="Samus.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneGame.h" />
     <ClInclude Include="SceneMain.h" />
     <ClInclude Include="SceneMenu.h" />
+    <ClInclude Include="Singleton.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>

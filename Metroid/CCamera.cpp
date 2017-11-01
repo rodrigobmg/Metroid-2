@@ -11,19 +11,17 @@ void CCamera::SetSizeMap(int _max, int _min)
 	_maxSize = _max;
 	_minSize = _min;
 }
-
 D3DXVECTOR2 CCamera::Transform(int x, int y)
 {
 	D3DXMATRIX matrix;
-	D3DXMatrixIdentity(&matrix);   //Làm sạch ma trận, đưa về ma trận mặc định
-	//Tạo ma trận 4 (trong slide Transform)
-	matrix._22 = -1;				
+	D3DXMatrixIdentity(&matrix);
+	matrix._22 = -1;
 	matrix._41 = -viewport.x;
 	matrix._42 = viewport.y;
 
-	D3DXVECTOR3 pos3(x, y, 1);	//tao ma tran 3 gan toa do vao
+	D3DXVECTOR3 pos3(x, y, 1);	//tao ma tran 3 gan tao do mario vao
 	D3DXVECTOR4 MatrixResult;
-	D3DXVec3Transform(&MatrixResult, &pos3, &matrix); //Nhân ma trận
+	D3DXVec3Transform(&MatrixResult, &pos3, &matrix);
 	//Kết thúc transform
 
 	D3DXVECTOR2 result = D3DXVECTOR2(MatrixResult.x, MatrixResult.y);
@@ -38,13 +36,19 @@ D3DXVECTOR3 CCamera::CenterSprite(int x, int y)
 
 void CCamera::UpdateCamera(int x)
 {
+	//if((viewport.x + G_ScreenWidth < _maxSize) || (x - 249 + G_ScreenWidth < _maxSize))
+	//	viewport.x = x - 250;
+	//if (viewport.x + G_ScreenWidth > _maxSize)
+	//	viewport.x = 5138 - G_ScreenWidth;
+	//if (viewport.x < _minSize)
+	//	viewport.x = _minSize;
 	if (x > viewport.x + G_ScreenWidth || x < viewport.x)
 	{
-		viewport.x = x - G_ScreenWidth / 2;
+		viewport.x = x - (G_ScreenWidth / 2 - 14);
 	}
 
 	if (x  < _maxSize - G_ScreenWidth / 2)
-		viewport.x = x - G_ScreenWidth / 2;
+		viewport.x = x - (G_ScreenWidth / 2 - 14);
 	if (viewport.x < _minSize)
 		viewport.x = _minSize;
 	if (viewport.x + G_ScreenWidth > _maxSize)

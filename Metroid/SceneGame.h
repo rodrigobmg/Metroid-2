@@ -6,6 +6,8 @@
 //#include "QGameObject.h"
 #include "Scene.h"
 //#include "GameScore.h"
+#include "Samus.h"
+#include "CText.h"
 using namespace std;
 
 class SceneGame : public Scene
@@ -43,14 +45,14 @@ protected:
 
 	QBackground *bg;
 	QBackground *bg_2;
-	//Simon* simon;
+	Samus* samus;
 	//Simon* simonTemp;	//Luu thong tin cua simon cu
 	//QGameObject* qGameObject;
 	//OpenDoor* openDoor;
 	//IntroGame* introScene;
 	//GameObject* intro;
 	CCamera *camera;
-
+	CText* arial;
 	//PhantomBat* _phantomBat;
 	//QueenMedusa* _queenMedusa;
 
@@ -59,7 +61,7 @@ protected:
 	void ChangeCamera(EDirectDoor _directDoor);
 	void MoveCamera(int &_range);
 	void LoadLevel(int level);
-	void LoadStage(int stage);
+	void LoadStage();
 	void ResetLevel();
 	void NextLevel();
 	void RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int t);

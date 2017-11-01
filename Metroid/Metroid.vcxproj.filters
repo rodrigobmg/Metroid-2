@@ -31,6 +31,9 @@
     <Filter Include="GameObject">
       <UniqueIdentifier>{7fefdd96-ac17-45b7-98ee-ab52fb713270}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Samus">
+      <UniqueIdentifier>{76c34ce4-806e-46fc-9ecd-15b2c9e048b1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -78,6 +81,18 @@
     <ClCompile Include="SceneGame.cpp">
       <Filter>Game\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Singleton.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicObject.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Samus.cpp">
+      <Filter>GameObject\Samus</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tile.h">
@@ -124,6 +139,18 @@
     </ClInclude>
     <ClInclude Include="SceneGame.h">
       <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicObject.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Samus.h">
+      <Filter>GameObject\Samus</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

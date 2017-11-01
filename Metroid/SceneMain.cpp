@@ -12,25 +12,25 @@ SceneMain::SceneMain(int _nCmdShow) : CGame(_nCmdShow)
 
 void SceneMain::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int t)
 {
-	//if (sceneNow->sceneState != currentStateScene)
-	//{
-	//	switch (sceneNow->sceneState)
-	//	{
-	//	case ESceneState::Game_Scene:
-	//		sceneNow = new SceneGame();
-	//		sceneNow->LoadResources(d3ddv);
-	//		break;
-	//	case ESceneState::Menu_Scene:
-	//		sceneNow = new SceneMenu();
-	//		sceneNow->LoadResources(d3ddv);
-	//		break;
-	//		/*case ESceneState::EndGame_Scene:
-	//		sceneNow = new EndGameScene();
-	//		sceneNow->LoadResources(d3ddv);
-	//		break;*/
-	//	}
-	//	currentStateScene = sceneNow->sceneState;
-	//}
+	if (sceneNow->sceneState != currentStateScene)
+	{
+		switch (sceneNow->sceneState)
+		{
+		case ESceneState::Game_Scene:
+			sceneNow = new SceneGame();
+			sceneNow->LoadResources(d3ddv);
+			break;
+		/*case ESceneState::Menu_Scene:
+			sceneNow = new SceneMenu();
+			sceneNow->LoadResources(d3ddv);
+			break;*/
+			/*case ESceneState::EndGame_Scene:
+			sceneNow = new EndGameScene();
+			sceneNow->LoadResources(d3ddv);
+			break;*/
+		}
+		currentStateScene = sceneNow->sceneState;
+	}
 	sceneNow->RenderFrame(d3ddv, t);
 }
 

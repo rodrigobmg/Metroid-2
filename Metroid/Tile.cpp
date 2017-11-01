@@ -1,20 +1,21 @@
+
 #include "Tile.h"
 
 
-Tile::Tile()
+Tile::Tile(void)
 {
-	ID = -1;
+	idTile = -1;
+	posX = 0;
+	posY = 0;
 }
 
-Tile::Tile(int id, int posX, int posY)
+Tile::Tile(int id, int x, int y)
 {
-	ID = id;
-	this->posX = posX;
-	this->posY = posY;
+	idTile = id;
+	posX = x;
+	posY = y;
 }
 
-
-Tile::~Tile()
+Tile::~Tile(void)
 {
-
 }

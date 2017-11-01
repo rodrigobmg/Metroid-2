@@ -1,20 +1,13 @@
-﻿  QBackground.cpp
+﻿  Samus.cpp
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\domiter\documents\github\metroid\metroid\qbackground.cpp(35): warning C4101: '_obj': unreferenced local variable
-c:\users\domiter\documents\github\metroid\metroid\qbackground.cpp(61): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-  Generating Code...
-  Compiling...
-  main.cpp
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(757): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(760): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(764): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+  GameObject.cpp
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\domiter\documents\github\metroid\metroid\scenemain.h(6): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  SceneMenu.cpp
-  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\domiter\documents\github\metroid\metroid\scenemain.h(6): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  SceneMain.cpp
-  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\domiter\documents\github\metroid\metroid\scenemain.h(6): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  SceneGame.cpp
-  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\domiter\documents\github\metroid\metroid\gameobject.cpp(72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\gameobject.cpp(73): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
   Generating Code...
   Metroid.vcxproj -> C:\Users\Domiter\Documents\GitHub\Metroid\Debug\Metroid.exe
   Metroid.vcxproj -> C:\Users\Domiter\Documents\GitHub\Metroid\Debug\Metroid.pdb (Full PDB)

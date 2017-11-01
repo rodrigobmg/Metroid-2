@@ -3,7 +3,7 @@
 
 #include "Game.h"
 #include "SceneMenu.h"
-#include "SceneGame.h";
+#include "SceneGame.h"
 //#include "EndGameScene.h"
 
 class SceneMain : public CGame
@@ -25,4 +25,3 @@ protected:
 };
 
 #endif
-

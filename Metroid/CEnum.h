@@ -66,8 +66,8 @@ enum EnumID
 	MagicalCrystal_ID,
 
 	MorningStar_ID,
-	Simon_ID,
-	SimonDeath_ID,
+	Samus_ID,
+	SamusDeath_ID,
 
 	Brick_ID,
 	Candle_ID,
