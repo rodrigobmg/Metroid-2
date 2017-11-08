@@ -49,7 +49,8 @@ void SceneGame::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int deltaTime)
 	arial->render(camera->viewport.y, 120, 10);
 	arial->render(camera->viewport.x, 180, 10);
 	arial->render(samus->posX, 240, 10);
-	arial->render(1000/deltaTime,300, 10);
+	arial->render(samus->posY, 300, 10);
+	arial->render(1000/deltaTime,380, 10);
 }
 
 void SceneGame::ProcessInput(int keyCode)
@@ -63,6 +64,10 @@ void SceneGame::ProcessInput(int keyCode)
 		case DIK_LEFT:
 		case DIK_A:
 			samus->TurnLeft();
+			break;
+		case DIK_UP:
+		case DIK_W:
+			samus->TurnUp();
 			break;
 		default:
 			samus->Stop();
@@ -101,6 +106,23 @@ void SceneGame::LoadResources(LPDIRECT3DDEVICE9 d3ddv)
 }
 
 void SceneGame::OnKeyDown(int KeyCode)
+{
+	switch (KeyCode)
+	{
+	case DIK_SPACE:
+		samus->Jump();
+		break;
+	case DIK_DOWN:
+	case DIK_S:
+		samus->Roll();
+		break;
+	case DIK_Z:
+		samus->Shot();
+		break;
+	}
+}
+
+void SceneGame::OnKeyUp(int KeyCode)
 {
 	
 }

@@ -69,6 +69,7 @@ protected:
 	void LoadResources(LPDIRECT3DDEVICE9 d3ddv);
 
 	void OnKeyDown(int KeyCode);
+	void OnKeyUp(int KeyCode);
 };
 #endif
 

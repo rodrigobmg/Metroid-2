@@ -9,6 +9,11 @@ class Singleton
 private:
 	CTexture* samus;
 	CTexture* samusDeath;
+	CTexture* samusJump1;
+	CTexture* samusJump2;
+	CTexture* samusRoll;
+	CTexture* samusShotUp;
+	CTexture* samusShot;
 
 	static Singleton *single;
 	Singleton();

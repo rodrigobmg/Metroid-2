@@ -28,7 +28,11 @@ public:
 	//CSprite* _simonStair;
 	//GameObject* _stair;	//Thong tin stair;
 
-	CSprite *simonJump;
+	CSprite *samusJump1;
+	CSprite *samusJump2;
+	CSprite *samusRoll;
+	CSprite *samusShotUp;
+	CSprite *samusShot;
 
 	float _vLast;
 	Action _action;
@@ -36,11 +40,14 @@ public:
 	bool _hasJump;
 	float _heightJump;
 
+	bool _hasShot;
+
 	bool _allowPress;		//Cho phep nhan phim
-	bool _hasSit;
+	bool _hasRoll;
+	bool _hasTurnUp;
 	bool _movingByMovingPlatform;
 	bool _onLand;
-	bool _hasFall;			//Simon dang rot
+	bool _hasFall;			//Samus dang rot
 							//---------Stair-------------
 	bool _isDraw;
 	EKindStair _kindStair;
@@ -84,9 +91,13 @@ public:
 	void TurnRight();
 	void Jump();
 	void Stop();
+	void Roll();
+	void TurnUp();
 	void Draw(CCamera*);
 
+	void ShotUp();
 	void Fight();
+	void Shot();
 	void UseWeapon();
 	void SetWeapon();
 	void ChangeWeapon(EnumID idWeapon);
@@ -100,7 +111,7 @@ public:
 	void ResetStair();
 	//bool OnStair();
 
-	void Sit();
+	
 	void Fall();
 	bool IsFight();
 	//Box GetBox();
