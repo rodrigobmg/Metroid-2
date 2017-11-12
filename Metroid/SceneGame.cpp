@@ -1,9 +1,6 @@
 
 #include "SceneGame.h"
 
-#define BACKGROUND_FILE "Resources/black.png"
-#define BACKGROUND_WHITE_FILE "Resources/white.png"
-
 SceneGame::SceneGame(void) : Scene(ESceneState::Game_Scene)
 {
 	camera = new CCamera();
@@ -28,26 +25,20 @@ void SceneGame::LoadStage()
 
 void SceneGame::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int deltaTime)
 {
-
-	
 	G_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
 	samus->Update(deltaTime);
 	camera->UpdateCamera(samus->posX);
 	
-
 	bg->Draw(camera);	
 	samus->Draw(camera);
 
 	G_SpriteHandler->End();
 	
-	
-	
-	
-
+	//render info
 	arial->onLost();
-	arial->render("viewport y: ", 10, 10);
-	arial->render(camera->viewport.y, 120, 10);
-	arial->render(camera->viewport.x, 180, 10);
+	arial->render("viewport x - y: ", 10, 10);
+	arial->render(camera->viewport.x, 120, 10);
+	arial->render(camera->viewport.y, 180, 10);
 	arial->render(samus->posX, 240, 10);
 	arial->render(samus->posY, 300, 10);
 	arial->render(1000/deltaTime,380, 10);
@@ -75,21 +66,6 @@ void SceneGame::ProcessInput(int keyCode)
 	}
 }
 
-void SceneGame::ResetLevel()
-{
-	
-}
-
-void SceneGame::ChangeCamera(EDirectDoor _directDoor)
-{
-	
-
-}
-
-void SceneGame::MoveCamera(int &_moveRange)
-{
-	
-}
 
 void SceneGame::LoadResources(LPDIRECT3DDEVICE9 d3ddv)
 {
@@ -109,7 +85,7 @@ void SceneGame::OnKeyDown(int KeyCode)
 {
 	switch (KeyCode)
 	{
-	case DIK_SPACE:
+	case DIK_X:
 		samus->Jump();
 		break;
 	case DIK_DOWN:
@@ -120,11 +96,6 @@ void SceneGame::OnKeyDown(int KeyCode)
 		samus->Shot();
 		break;
 	}
-}
-
-void SceneGame::OnKeyUp(int KeyCode)
-{
-	
 }
 
 SceneGame::~SceneGame(void)

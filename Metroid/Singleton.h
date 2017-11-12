@@ -14,6 +14,8 @@ private:
 	CTexture* samusRoll;
 	CTexture* samusShotUp;
 	CTexture* samusShot;
+	CTexture* bullet;
+
 
 	static Singleton *single;
 	Singleton();

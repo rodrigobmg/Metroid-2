@@ -50,6 +50,7 @@ enum EnumID
 	FireBomb_ID,
 	Boomerang_ID,
 	Axe_ID,
+	Bullet_ID,
 	//Item
 	LargeHeartItem_ID,
 	SmallHeartItem_ID,

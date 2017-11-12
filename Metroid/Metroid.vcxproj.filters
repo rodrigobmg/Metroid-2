@@ -34,6 +34,9 @@
     <Filter Include="GameObject\Samus">
       <UniqueIdentifier>{76c34ce4-806e-46fc-9ecd-15b2c9e048b1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Weapon">
+      <UniqueIdentifier>{e53f6f83-810b-4821-9c7a-ebc7f0593d73}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -93,6 +96,9 @@
     <ClCompile Include="Samus.cpp">
       <Filter>GameObject\Samus</Filter>
     </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>GameObject\Weapon</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tile.h">
@@ -151,6 +157,9 @@
     </ClInclude>
     <ClInclude Include="Samus.h">
       <Filter>GameObject\Samus</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>GameObject\Weapon</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

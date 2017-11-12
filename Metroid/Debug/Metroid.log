@@ -1,16 +1,38 @@
-﻿  Samus.cpp
+﻿  SceneGame.cpp
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(789): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(794): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(799): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(804): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(809): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(812): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(819): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(824): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(829): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(834): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(837): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\scenegame.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\scenegame.cpp(40): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\scenegame.cpp(41): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\scenegame.cpp(42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\scenegame.cpp(43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Samus.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(12): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(105): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(110): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(117): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(122): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(127): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(132): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(135): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(142): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(147): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(152): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(157): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(160): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+  Bullet.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\domiter\documents\github\metroid\metroid\bullet.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\bullet.cpp(32): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\bullet.cpp(34): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+  Generating Code...
+  Compiling...
+  main.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  SceneMenu.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  SceneMain.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Generating Code...
   Metroid.vcxproj -> C:\Users\Domiter\Documents\GitHub\Metroid\Debug\Metroid.exe
   Metroid.vcxproj -> C:\Users\Domiter\Documents\GitHub\Metroid\Debug\Metroid.pdb (Full PDB)

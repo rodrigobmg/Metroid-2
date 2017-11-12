@@ -24,6 +24,7 @@ Singleton::Singleton()
 	samusRoll = new CTexture("Resources/samusRoll.png", 4, 1, 4);
 	samusShotUp = new CTexture("Resources/samusShotUp.png", 6, 1, 6);
 	samusShot = new CTexture("Resources/samusShot.png", 5, 1, 5);
+	bullet = new CTexture("Resources/Weapon/bullet.png", 1, 1, 1);
 }
 
 CTexture* Singleton::getTexture(EnumID id)
@@ -42,5 +43,7 @@ CTexture* Singleton::getTexture(EnumID id)
 			return samusShotUp;
 		case EnumID::SamusShot_ID:
 			return samusShot;
+		case EnumID::Bullet_ID:
+			return bullet;
 	}
 }
