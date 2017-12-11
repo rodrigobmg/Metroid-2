@@ -20,7 +20,7 @@ public:
 	DynamicObject(float posX, float posY, float vX, float vY, EnumID id);
 	virtual void Update(int dt);
 	virtual void Draw(CCamera*);
-	//virtual Box GetBox();
+	virtual Box GetBox();
 	virtual void Collision(list<GameObject*> obj, int dt);
 	virtual void SetActive(float x, float y);
 	virtual void ReceiveDamage(int damagePoint);

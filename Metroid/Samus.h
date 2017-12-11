@@ -19,6 +19,7 @@ public:
 	float _vLast;
 	Action _action;
 
+	bool onLand;
 	bool _hasJump;
 	float _heightJump;
 
@@ -44,6 +45,10 @@ public:
 	void TurnUp();
 	void Shot();
 	void Draw(CCamera*);
+
+	Box GetBox();
+	void Collision(list<GameObject*> &obj, float dt);
+
 	void Initialize();
 	D3DXVECTOR2* getPos();
 	

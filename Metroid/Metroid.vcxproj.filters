@@ -37,6 +37,12 @@
     <Filter Include="GameObject\Weapon">
       <UniqueIdentifier>{e53f6f83-810b-4821-9c7a-ebc7f0593d73}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\QGameObject">
+      <UniqueIdentifier>{f9ffb5e6-4865-4d12-9990-c3d5e83c614d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Ground">
+      <UniqueIdentifier>{a3b324d1-a75a-47b7-b643-055d42af2c8b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -99,6 +105,12 @@
     <ClCompile Include="Bullet.cpp">
       <Filter>GameObject\Weapon</Filter>
     </ClCompile>
+    <ClCompile Include="QGameObject.cpp">
+      <Filter>GameObject\QGameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Ground.cpp">
+      <Filter>GameObject\Ground</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tile.h">
@@ -160,6 +172,18 @@
     </ClInclude>
     <ClInclude Include="Bullet.h">
       <Filter>GameObject\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="QGameObject.h">
+      <Filter>GameObject\QGameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Header.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="SweptAABB.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Ground.h">
+      <Filter>GameObject\Ground</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

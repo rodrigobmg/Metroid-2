@@ -2,6 +2,7 @@
 #define _SCENE1_H_
 
 #include "QBackground.h"
+#include "QGameObject.h"
 #include "Scene.h"
 #include "Samus.h"
 #include "CText.h"
@@ -20,6 +21,7 @@ public:
 protected:
 
 	QBackground *bg;
+	QGameObject* qGameObject;
 	Samus* samus;
 	CCamera *camera;
 	CText* arial;

@@ -8,7 +8,7 @@ Samus::Samus(void) : DynamicObject()
 {
 }
 
-Samus::Samus(int _posX, int _posY) : DynamicObject(_posX, _posY, 0, 0, EnumID::Samus_ID)
+Samus::Samus(int _posX, int _posY) : DynamicObject(_posX, _posY, 0, -SPEED_Y, EnumID::Samus_ID)
 {
 	_action = Action::Idle;
 	_allowPress = true;
@@ -66,13 +66,13 @@ void Samus::Update(int deltaTime)
 		{
 			vY = -(SPEED_Y);
 		}
-		if (posY < 129) //nếu chạm đất (tạm thời set đất là 129 do chưa gắn gạch)
-		{
-			vY = 0;
-			vX = 0;
-			posY = 129;
-			_hasJump = false;
-		}
+		////if (posY < 129) //nếu chạm đất (tạm thời set đất là 129 do chưa xét collision)
+		////{
+		////	vY = 0;
+		////	vX = 0;
+		////	posY = 129;
+		////	_hasJump = false;
+		////}
 	}
 
 	//Lăn tròn
@@ -83,13 +83,13 @@ void Samus::Update(int deltaTime)
 	}
 
 	//Bắn lên
-	if (_hasTurnUp)
-	{
-		posY = 135;  //tạm thời set posY = 135
-		if (_action == Action::Run_Left || _action == Action::Run_Right)		
-			samusShotUp->Update(deltaTime);
-	}
-	else if (!_hasJump) posY = 129;
+	////if (_hasTurnUp)
+	////{
+	////	posY = 135;  //tạm thời set posY = 135
+	////	if (_action == Action::Run_Left || _action == Action::Run_Right)		
+	////		samusShotUp->Update(deltaTime);
+	////}
+	////else if (!_hasJump) posY = 129;
 
 	//Bắn
 	if (_hasShot)
@@ -99,6 +99,178 @@ void Samus::Update(int deltaTime)
 			samusShot->Update(deltaTime);
 	}
 }
+
+Box Samus::GetBox()
+{
+	if (_hasJump && _heightJump >= MAX_HEIGHT / 2)  //???????
+	{
+		return Box(posX - width / 2 + 14.5f, posY + height / 2 - 3, width - 29, height - 34);
+	}
+	return Box(posX - width / 2 + 14.5f, posY + height / 2 - 3, width - 10, height - 18);
+}
+
+void Samus::Collision(list<GameObject*> &obj, float dt)
+{
+	/*for (list<Weapon*>::iterator i = _weapon->begin(); i != _weapon->end(); i++)
+	{
+		if ((*i)->active)
+		{
+			if ((*i)->id == EnumID::Boomerang_ID)
+				(*i)->Collision(this->GetBox());
+			(*i)->Collision(obj, dt);
+			point += (*i)->point;
+			(*i)->point = 0;
+		}
+	}
+	if (Action::Fight == _action)
+	{
+		if (!_usingWeapon)
+			_morningStar->Collision(obj, dt);
+		point += _morningStar->point;
+		_morningStar->point = 0;
+	}*/
+
+	for (list<GameObject*>::iterator _itBegin = obj.begin(); _itBegin != obj.end(); _itBegin++)
+	{
+		GameObject* other = (*_itBegin);
+		////if (!other->active)
+		////{
+		////	if (other->type != ObjectType::Item_Type)
+		////		other->SetActive(posX, posY);
+		////}
+		/////*else if ((other->id == EnumID::BlackLeopard_ID && other->sprite->GetIndex() == 0)
+		////	|| (other->id == EnumID::VampireBat_ID && other->sprite->GetIndex() == 0))
+		////{
+		////	other->SetActive(posX, posY);
+		////}*/
+		////else
+		////	if (other->id == EnumID::Candle_ID || other->id == EnumID::LargeCandle_ID
+		////		/*|| other->id == EnumID::MovingPlatform_ID*/)
+		////	{
+		////	}
+		////	else
+			
+				float moveX;
+				float moveY;
+				float normalx;
+				float normaly;
+
+				Box boxSamus = this->GetBox();
+				Box boxOther = other->GetBox();
+
+				if (AABB(boxSamus, boxOther, moveX, moveY) == true)
+				{
+#pragma region
+//					if (other->type == ObjectType::Item_Type && other->id != EnumID::Fire_ID)
+//					{
+//						other->Remove();
+//						switch (other->id)
+//						{
+//						case EnumID::AxeItem_ID:
+//							_weaponID = EnumID::Axe_ID;
+//							SoundManager::GetInst()->PlaySoundEffect(ESoundEffect::ES_CollectWeapon);
+//							break;
+//						case EnumID::WatchItem_ID:
+//							_weaponID = EnumID::Watch_ID;
+//							SoundManager::GetInst()->PlaySoundEffect(ESoundEffect::ES_CollectWeapon);
+//							break;
+//						case EnumID::BoomerangItem_ID:
+//							_weaponID = EnumID::Boomerang_ID;
+//							SoundManager::GetInst()->PlaySoundEffect(ESoundEffect::ES_CollectWeapon);
+//							break;
+//						case EnumID::DaggerItem_ID:
+//							_weaponID = EnumID::Dagger_ID;
+//							SoundManager::GetInst()->PlaySoundEffect(ESoundEffect::ES_CollectWeapon);
+//							break;
+//						case EnumID::FireBombItem_ID:
+//							_weaponID = EnumID::FireBomb_ID;
+//							SoundManager::GetInst()->PlaySoundEffect(ESoundEffect::ES_CollectWeapon);
+//							break;
+//						case EnumID::MorningStarItem_ID:
+//							this->UpgradeMorningStar();
+//							SoundManager::GetInst()->PlaySoundEffect(ESoundEffect::ES_CollectWeapon);
+//							break;
+//						case EnumID::SmallHeartItem_ID:
+//						case EnumID::LargeHeartItem_ID:
+//							//cong tim
+//							hearts += other->hearts;
+//							SoundManager::GetInst()->PlaySoundEffect(ESoundEffect::ES_CollectItem);
+//							break;
+//						case EnumID::MoneyBagBlueItem_ID:
+//						case EnumID::MoneyBagRedItem_ID:
+//						case EnumID::MoneyBagItem_ID:
+//						case EnumID::MoneyBagWhiteItem_ID:
+//							//cong tien
+//							point += other->point;
+//							SoundManager::GetInst()->PlaySoundEffect(ESoundEffect::ES_CollectItem);
+//							break;
+//						case EnumID::CrossItem_ID:
+//							//Xoa het enemy tren camera
+//							SetUsingCross(true);
+//							break;
+//						case EnumID::MagicalCrystal_ID:
+//							//Qua man
+//							_eatMagicalCrystal = true;
+//							SoundManager::GetInst()->RemoveAllBGM();
+//							SoundManager::GetInst()->PlaySoundEffect(ESoundEffect::ES_StageClear);
+//							break;
+//						}
+//#pragma endregion Lay item
+//					}
+					//else
+					//{
+						switch (other->id)
+						{
+#pragma region
+						case EnumID::Ground1_ID:
+						case EnumID::Ground4_ID:
+						case EnumID::Ground6_ID:
+							//_onMovingPlatform = false;
+							
+								if (moveY > 0)
+								{
+									posY += moveY;
+									if ((_hasJump))
+									{
+										_hasJump = false;
+										vY = 0;
+										vX = 0;
+										/*if (boxSamus.h < 60)
+											posY += 16;*/
+									}
+									else 
+										if (!_hasJump)
+										{
+											vY = 0;
+											onLand = true;
+										}
+											
+												
+								}
+	 						
+							//Xu ly rot khoi cuc gach
+							if ((!onLand ) && !_hasJump)
+							{
+								vY = -(SPEED_Y + 0.4f);
+							}
+							//--------------------
+							/*if (onLand && moveX != 0 && vX != 0 && !_onStair && !_hasJump && !_onMovingPlatform)
+							{
+								posX += moveX;
+							}*/
+							break;
+#pragma endregion Va cham Gach
+
+						default:
+
+							break;
+						}
+				}
+				
+			
+	}
+}
+
 
 void Samus::Draw(CCamera* camera)
 {

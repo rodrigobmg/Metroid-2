@@ -15,16 +15,20 @@ void SceneGame::LoadLevel(int level)
 
 	bg = new QBackground(level);
 
-	samus = new Samus(1264, 129);
+	samus = new Samus(1264, 250);  //1264
 }
 
 void SceneGame::LoadStage()
 {
+	qGameObject = new QGameObject("Resources\\Maps\\demoMap\\demoMap_GameObj.txt");
 	camera->SetSizeMap(G_MaxSize, G_MinSize);
 }
 
 void SceneGame::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int deltaTime)
 {
+	samus->Collision(*(qGameObject->_staticObject), deltaTime);
+
+
 	G_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
 	samus->Update(deltaTime);
 	camera->UpdateCamera(samus->posX);

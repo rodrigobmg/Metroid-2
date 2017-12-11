@@ -4,7 +4,7 @@
 #include "CSprite.h"
 #include "Singleton.h"
 #include "CCamera.h"
-//#include "SweptAABB.h"
+#include "SweptAABB.h"
 //#include "SoundManager.h"
 #include <list>
 using namespace std;
@@ -35,7 +35,7 @@ public:
 	virtual void CreateSprite();
 	virtual void Collision(list<GameObject*> obj, int dt);
 	ECollisionDirect GetCollisionDirect(float normalx, float normaly);
-	//virtual Box GetBox();
+	virtual Box GetBox();
 	virtual void SetActive(float x, float y);
 	virtual void SetActive();
 	virtual void Remove();

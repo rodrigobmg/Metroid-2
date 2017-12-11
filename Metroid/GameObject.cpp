@@ -48,7 +48,20 @@ void GameObject::CreateSprite()
 	case EnumID::Samus_ID:
 		sprite = new CSprite(Singleton::getInstance()->getTexture(id), 1, 3, 20);
 		break;
-	
+	case EnumID::Ground1_ID:
+	case EnumID::Ground2_ID:
+	case EnumID::Ground3_ID:
+	case EnumID::Ground4_ID:
+	case EnumID::Ground5_ID:
+	case EnumID::Ground6_ID:
+	case EnumID::Ground7_ID:
+	case EnumID::Ground8_ID:
+	case EnumID::Ground9_ID:
+	case EnumID::Ground10_ID:
+	case EnumID::Ground11_ID:
+	case EnumID::Ground12_ID:
+		sprite = NULL;
+		break;
 	default:
 		sprite = new CSprite(Singleton::getInstance()->getTexture(id), 1);
 		break;
@@ -110,11 +123,11 @@ void GameObject::ReceiveDamage(int damagePoint)
 		death = true;
 }
 
-//Box GameObject::GetBox()
-//{
-//	Box result(posX - width / 2, posY + height / 2, width, height);
-//	return result;
-//}
+Box GameObject::GetBox()
+{
+	Box result(posX - width / 2, posY + height / 2, width, height);
+	return result;
+}
 
 void GameObject::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int t) {}
 void GameObject::OnKeyDown(int KeyCode) {}

@@ -1,38 +1,21 @@
-﻿  SceneGame.cpp
-  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\domiter\documents\github\metroid\metroid\scenegame.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\scenegame.cpp(40): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\scenegame.cpp(41): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\scenegame.cpp(42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\scenegame.cpp(43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Samus.cpp
+﻿  Samus.cpp
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
 c:\users\domiter\documents\github\metroid\metroid\samus.cpp(12): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(105): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(110): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(117): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(122): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(127): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(132): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(135): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(142): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(147): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(152): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(157): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(160): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-  Bullet.cpp
-  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\domiter\documents\github\metroid\metroid\bullet.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\bullet.cpp(32): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\bullet.cpp(34): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-  Generating Code...
-  Compiling...
-  main.cpp
-  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  SceneMenu.cpp
-  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  SceneMain.cpp
-  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  Generating Code...
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(107): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(109): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(156): warning C4101: 'normaly': unreferenced local variable
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(155): warning C4101: 'normalx': unreferenced local variable
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(277): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(282): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(289): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(294): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(299): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(304): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(307): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(314): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(319): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(324): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(329): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\domiter\documents\github\metroid\metroid\samus.cpp(332): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
   Metroid.vcxproj -> C:\Users\Domiter\Documents\GitHub\Metroid\Debug\Metroid.exe
   Metroid.vcxproj -> C:\Users\Domiter\Documents\GitHub\Metroid\Debug\Metroid.pdb (Full PDB)
