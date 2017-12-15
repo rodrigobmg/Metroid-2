@@ -1,21 +1,104 @@
-﻿  Samus.cpp
+﻿  Utils.cpp
+  Tile.cpp
+  Singleton.cpp
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(12): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(107): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(109): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(156): warning C4101: 'normaly': unreferenced local variable
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(155): warning C4101: 'normalx': unreferenced local variable
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(277): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(282): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(289): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(294): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(299): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(304): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(307): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(314): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(319): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(324): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(329): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\domiter\documents\github\metroid\metroid\samus.cpp(332): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-  Metroid.vcxproj -> C:\Users\Domiter\Documents\GitHub\Metroid\Debug\Metroid.exe
-  Metroid.vcxproj -> C:\Users\Domiter\Documents\GitHub\Metroid\Debug\Metroid.pdb (Full PDB)
+  SceneMenu.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  SceneMain.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  SceneGame.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+f:\projects\metroid\metroid\scenegame.cpp(29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\projects\metroid\metroid\scenegame.cpp(34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+f:\projects\metroid\metroid\scenegame.cpp(44): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+f:\projects\metroid\metroid\scenegame.cpp(45): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+f:\projects\metroid\metroid\scenegame.cpp(46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+f:\projects\metroid\metroid\scenegame.cpp(47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Scene.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Samus.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+f:\projects\metroid\metroid\samus.cpp(12): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\projects\metroid\metroid\samus.cpp(107): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\projects\metroid\metroid\samus.cpp(109): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\projects\metroid\metroid\samus.cpp(156): warning C4101: 'normaly': unreferenced local variable
+f:\projects\metroid\metroid\samus.cpp(155): warning C4101: 'normalx': unreferenced local variable
+f:\projects\metroid\metroid\samus.cpp(277): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+f:\projects\metroid\metroid\samus.cpp(282): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+f:\projects\metroid\metroid\samus.cpp(289): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+f:\projects\metroid\metroid\samus.cpp(294): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+f:\projects\metroid\metroid\samus.cpp(299): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+f:\projects\metroid\metroid\samus.cpp(304): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+f:\projects\metroid\metroid\samus.cpp(307): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+f:\projects\metroid\metroid\samus.cpp(314): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+f:\projects\metroid\metroid\samus.cpp(319): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+f:\projects\metroid\metroid\samus.cpp(324): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+f:\projects\metroid\metroid\samus.cpp(329): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+f:\projects\metroid\metroid\samus.cpp(332): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+  QNode.cpp
+  QGameObject.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+f:\projects\metroid\metroid\qgameobject.cpp(137): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+f:\projects\metroid\metroid\qgameobject.cpp(140): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  QBackground.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+f:\projects\metroid\metroid\qbackground.cpp(35): warning C4101: '_obj': unreferenced local variable
+f:\projects\metroid\metroid\qbackground.cpp(61): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+  main.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Ground.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Global.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  GameObject.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+f:\projects\metroid\metroid\gameobject.cpp(85): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+f:\projects\metroid\metroid\gameobject.cpp(86): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+f:\projects\metroid\metroid\gameobject.cpp(128): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Game.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  DynamicObject.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+f:\projects\metroid\metroid\dynamicobject.cpp(34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+f:\projects\metroid\metroid\dynamicobject.cpp(36): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+f:\projects\metroid\metroid\dynamicobject.cpp(38): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+f:\projects\metroid\metroid\dynamicobject.cpp(127): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  CTexture.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+f:\projects\metroid\metroid\ctexture.cpp(43): warning C4838: conversion from 'UINT' to 'LONG' requires a narrowing conversion
+  CText.cpp
+f:\projects\metroid\metroid\ctext.cpp(58): warning C4018: '>=': signed/unsigned mismatch
+f:\projects\metroid\metroid\ctext.cpp(70): warning C4018: '>=': signed/unsigned mismatch
+f:\projects\metroid\metroid\ctext.cpp(85): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+f:\projects\metroid\metroid\ctext.cpp(86): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+  CSprite.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+f:\projects\metroid\metroid\csprite.cpp(29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+f:\projects\metroid\metroid\csprite.cpp(91): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+f:\projects\metroid\metroid\csprite.cpp(92): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+f:\projects\metroid\metroid\csprite.cpp(108): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+f:\projects\metroid\metroid\csprite.cpp(127): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+f:\projects\metroid\metroid\csprite.cpp(145): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+f:\projects\metroid\metroid\csprite.cpp(180): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+f:\projects\metroid\metroid\csprite.cpp(181): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+f:\projects\metroid\metroid\game.cpp(59): warning C4715: 'CGame::InitWindow': not all control paths return a value
+f:\projects\metroid\metroid\singleton.cpp(49): warning C4715: 'Singleton::getTexture': not all control paths return a value
+  Compiling...
+  CCamera.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+f:\projects\metroid\metroid\ccamera.cpp(6): warning C4244: '=': conversion from 'int' to 'FLOAT', possible loss of data
+f:\projects\metroid\metroid\ccamera.cpp(22): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+f:\projects\metroid\metroid\ccamera.cpp(33): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+f:\projects\metroid\metroid\ccamera.cpp(47): warning C4244: '=': conversion from 'int' to 'FLOAT', possible loss of data
+f:\projects\metroid\metroid\ccamera.cpp(51): warning C4244: '=': conversion from 'int' to 'FLOAT', possible loss of data
+f:\projects\metroid\metroid\ccamera.cpp(53): warning C4244: '=': conversion from 'int' to 'FLOAT', possible loss of data
+f:\projects\metroid\metroid\ccamera.cpp(55): warning C4244: '=': conversion from 'int' to 'FLOAT', possible loss of data
+  Bullet.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+f:\projects\metroid\metroid\bullet.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+f:\projects\metroid\metroid\bullet.cpp(32): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+f:\projects\metroid\metroid\bullet.cpp(34): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+  Generating Code...
+  Metroid.vcxproj -> F:\Projects\Metroid\Debug\Metroid.exe
+  Metroid.vcxproj -> F:\Projects\Metroid\Debug\Metroid.pdb (Partial PDB)
