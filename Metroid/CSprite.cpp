@@ -21,7 +21,7 @@ CSprite::CSprite(const CSprite &sprite)
 	_timeLocal = sprite._timeLocal;
 }
 
-CSprite::CSprite(CTexture* texture, int start, int end, int timeAnimation)
+CSprite::CSprite(CTexture* texture, int start, int end, float timeAnimation)
 	: _texture(texture)
 {
 	_start = start;
@@ -69,7 +69,7 @@ void CSprite::Update(int ellapseTime)
 {
 	_timeLocal += ellapseTime;
 
-	if (_timeLocal >= _timeAni)
+	if (_timeLocal >= _timeAni) //Nếu time hiện tại lớn hơn or bằng time frame thì reset và chuyển frame
 	{
 		_timeLocal = 0;
 		this->Next();

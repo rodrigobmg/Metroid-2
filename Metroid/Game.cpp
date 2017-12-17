@@ -233,7 +233,11 @@ void CGame::GameRun()
 			frame_start = now;
 			RenderFrame();
 		}
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 4d41ca4be8ebf3768d7d854b952cb4081057ddbb
 		ProcessKeyBoard();
 
 		ProcessInput(G_Device, _DeltaTime);
@@ -258,12 +262,13 @@ void CGame::LoadResources(LPDIRECT3DDEVICE9 d3ddv) { }
 
 void CGame::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int Delta)
 {
-	/*HRESULT hr = G_KeyBoard->GetDeviceState(sizeof(_KeyStates), (LPVOID)&_KeyStates);
-	if(hr != S_OK)
+	HRESULT hr = G_KeyBoard->GetDeviceState(sizeof(_KeyStates), (LPVOID)&_KeyStates);
+	if (hr != S_OK)
 	{
-	hr = G_KeyBoard->Acquire();
-	G_KeyBoard->GetDeviceState(sizeof(_KeyStates), (LPVOID)&_KeyStates);
-	}*/
+		hr = G_KeyBoard->Acquire();
+		G_KeyBoard->GetDeviceState(sizeof(_KeyStates), (LPVOID)&_KeyStates);
+	}
+
 }
 
 int CGame::IsKeyDown(int KeyCode)

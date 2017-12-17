@@ -4,12 +4,11 @@
 class Tile
 {
 public:
-	int ID;
+	int idTile;
 	int posX, posY;
-
 	Tile(void);
-	Tile(int id, int posX, int posY);
-	~Tile();
+	Tile(int id, int x, int y);
+	~Tile(void);
 };
 
 #endif

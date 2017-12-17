@@ -19,7 +19,7 @@ public:
 	CSprite();
 	CSprite(const CSprite &sprite);
 	CSprite(CTexture* texture, int timeAnimation);
-	CSprite(CTexture* texture, int start, int end, int timeAnimation);
+	CSprite(CTexture* texture, int start, int end, float timeAnimation);
 
 	//sang frame tiếp theo
 	void Next();

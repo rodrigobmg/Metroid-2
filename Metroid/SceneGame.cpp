@@ -1,9 +1,6 @@
 
 #include "SceneGame.h"
 
-#define BACKGROUND_FILE "Resources/black.png"
-#define BACKGROUND_WHITE_FILE "Resources/white.png"
-
 SceneGame::SceneGame(void) : Scene(ESceneState::Game_Scene)
 {
 	/*_loadLevel = false;
@@ -26,8 +23,12 @@ SceneGame::SceneGame(void) : Scene(ESceneState::Game_Scene)
 
 void SceneGame::LoadLevel(int level)
 {
+	camera->viewport.y = 480;
+	//camera->viewport.x = 1023;
+
 	bg = new QBackground(level);
 
+<<<<<<< HEAD
 	//simon = new Simon(3850, 100);
 
 	camera->viewport.y = 4050;
@@ -86,10 +87,14 @@ void SceneGame::LoadLevel(int level)
 	/*posStageToReset.x = simon->posX;
 	posStageToReset.y = simon->posY;*/
 	posCamera = camera->viewport;
+=======
+	samus = new Samus(1264, 250);  //1264
+>>>>>>> 4d41ca4be8ebf3768d7d854b952cb4081057ddbb
 }
 
-void SceneGame::LoadStage(int stage)
+void SceneGame::LoadStage()
 {
+<<<<<<< HEAD
 	/*if (stage == 4)
 	{
 		qGameObject = new QGameObject("Resources/Maps/ObjectInMap.txt",
@@ -175,11 +180,15 @@ void SceneGame::LoadStage(int stage)
 	}
 	camera->SetSizeMap(G_MaxSize, G_MinSize);
 	openDoor = new OpenDoor(posDoor.x, posDoor.y);*/
+=======
+	qGameObject = new QGameObject("Resources\\Maps\\demoMap\\demoMap_GameObj.txt");
+>>>>>>> 4d41ca4be8ebf3768d7d854b952cb4081057ddbb
 	camera->SetSizeMap(G_MaxSize, G_MinSize);
 }
 
 void SceneGame::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int deltaTime)
 {
+<<<<<<< HEAD
 	//#pragma region
 	//
 	//	if(_levelNow == 0)
@@ -477,9 +486,12 @@ void SceneGame::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int deltaTime)
 	//_gameScore->drawTable();
 	G_SpriteHandler->End();
 	//_gameScore->drawScore();
+=======
+	samus->Collision(*(qGameObject->_staticObject), deltaTime);
+>>>>>>> 4d41ca4be8ebf3768d7d854b952cb4081057ddbb
 
-}
 
+<<<<<<< HEAD
 void SceneGame::ProcessInput(int keyCode)
 {
 	/*switch (keyCode)
@@ -522,10 +534,30 @@ void SceneGame::ResetLevel()
 		delete bg;
 	if (qGameObject != NULL)
 		delete qGameObject;*/
+=======
+	G_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
+	samus->Update(deltaTime);
+	camera->UpdateCamera(samus->posX);
+	
+	bg->Draw(camera);	
+	samus->Draw(camera);
+
+	G_SpriteHandler->End();
+	
+	//render info
+	arial->onLost();
+	arial->render("viewport x - y: ", 10, 10);
+	arial->render(camera->viewport.x, 120, 10);
+	arial->render(camera->viewport.y, 180, 10);
+	arial->render(samus->posX, 240, 10);
+	arial->render(samus->posY, 300, 10);
+	arial->render(1000/deltaTime,380, 10);
+>>>>>>> 4d41ca4be8ebf3768d7d854b952cb4081057ddbb
 }
 
-void SceneGame::ChangeCamera(EDirectDoor _directDoor)
+void SceneGame::ProcessInput(int keyCode)
 {
+<<<<<<< HEAD
 	//if (_directDoor != EDirectDoor::NoneDoor)
 	//{
 	//	switch (_directDoor)
@@ -642,6 +674,28 @@ void SceneGame::MoveCamera(int &_moveRange)
 	//}
 
 }
+=======
+	switch (keyCode)
+	{
+		case DIK_RIGHT:
+		case DIK_D:
+			samus->TurnRight();
+			break;
+		case DIK_LEFT:
+		case DIK_A:
+			samus->TurnLeft();
+			break;
+		case DIK_UP:
+		case DIK_W:
+			samus->TurnUp();
+			break;
+		default:
+			samus->Stop();
+			break;
+	}
+}
+
+>>>>>>> 4d41ca4be8ebf3768d7d854b952cb4081057ddbb
 
 void SceneGame::LoadResources(LPDIRECT3DDEVICE9 d3ddv)
 {
@@ -653,6 +707,7 @@ void SceneGame::LoadResources(LPDIRECT3DDEVICE9 d3ddv)
 	BackgroundWhite = CreateSurfaceFromFile(d3ddv, BACKGROUND_WHITE_FILE);
 */
 	HRESULT res = D3DXCreateSprite(d3ddv, &G_SpriteHandler);
+	arial = new CText(d3ddv, 22, G_ScreenWidth, G_ScreenHeight);
 
 	//if (_levelNow != 0 && _stageNow != 0)
 	//{
@@ -665,10 +720,13 @@ void SceneGame::LoadResources(LPDIRECT3DDEVICE9 d3ddv)
 	//	///*introScene = new IntroGame();*/
 	//}
 	LoadLevel(_levelNow);
+	LoadStage();
+
 }
 
 void SceneGame::OnKeyDown(int KeyCode)
 {
+<<<<<<< HEAD
 	/*if (stateGame == EState::NoUpdate_State)
 	{
 		if (KeyCode == DIK_R)
@@ -713,6 +771,21 @@ void SceneGame::OnKeyDown(int KeyCode)
 			break;
 		}
 	}*/
+=======
+	switch (KeyCode)
+	{
+	case DIK_X:
+		samus->Jump();
+		break;
+	case DIK_DOWN:
+	case DIK_S:
+		samus->Roll();
+		break;
+	case DIK_Z:
+		samus->Shot();
+		break;
+	}
+>>>>>>> 4d41ca4be8ebf3768d7d854b952cb4081057ddbb
 }
 
 SceneGame::~SceneGame(void)

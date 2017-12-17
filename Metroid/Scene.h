@@ -27,6 +27,7 @@ public:
 	virtual void ProcessInput(int keyCode);
 	virtual void LoadResources(LPDIRECT3DDEVICE9 d3ddv);
 	virtual void OnKeyDown(int KeyCode);
+	virtual void OnKeyUp(int KeyCode);
 	~Scene(void);
 };
 

@@ -1,4 +1,3 @@
-#pragma once
 
 #ifndef _GLOBAL_H_
 #define _GLOBAL_H_
@@ -86,4 +85,3 @@ void GLTitle(char* text);
 
 
 #endif
-
