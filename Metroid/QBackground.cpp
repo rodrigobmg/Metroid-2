@@ -1,5 +1,8 @@
 ﻿#include "QBackground.h"
 
+#define FRAME_WIDTH 32
+#define FRAME_HEIGHT 32
+
 QBackground::QBackground(void)
 {
 	listTile = NULL;
@@ -9,11 +12,7 @@ QBackground::QBackground(int level)
 {
 	string fileName;
 	string _fileName;
-<<<<<<< HEAD
-	fileName = "Resources\\Maps\\fullmap_map.txt";
-=======
 	fileName = "Resources\\Maps\\demoMap\\Stage1_Map.txt";
->>>>>>> 4d41ca4be8ebf3768d7d854b952cb4081057ddbb
 
 	ifstream map(fileName);
 
@@ -27,24 +26,8 @@ QBackground::QBackground(int level)
 		map >> countTileWidth >> countTileHeight;
 
 		//Load file tile
-<<<<<<< HEAD
-		bgSprite = new CSprite(new CTexture("Resources\\Maps\\fullmap.png", countTileWidth, countTileHeight, countTileWidth*countTileHeight), 1000);
-=======
 		bgSprite = new CSprite(new CTexture("Resources\\Maps\\demoMap\\demoMap.png", countTileWidth, countTileHeight, countTileWidth*countTileHeight), 1);
->>>>>>> 4d41ca4be8ebf3768d7d854b952cb4081057ddbb
 
-		/*switch (level)
-		{
-		case 1:
-		bgSprite = new CSprite(new CTexture("Resources\\Maps\\Level1.png", count, 1, count), 1000);
-		break;
-		case 2:
-		bgSprite = new CSprite(new CTexture("Resources\\Maps\\Level2.png", count, 1, count), 1000);
-		break;
-		case 3:
-		bgSprite = new CSprite(new CTexture("Resources\\Maps\\Level3.png", count, 1, count), 1000);
-		break;
-		}*/
 		map >> countHeight >> countWidth;
 		int id = 0;
 		listTile = new std::map<int, Tile*>();
@@ -55,8 +38,8 @@ QBackground::QBackground(int level)
 			for (int j = 0; j < countWidth; j++)
 			{
 				map >> value;
-				posX = (j * 32) + 16;
-				posY = (i * 32) - 16;
+				posX = (j * FRAME_WIDTH) + FRAME_WIDTH /2;
+				posY = (i * FRAME_HEIGHT) - FRAME_HEIGHT/2;
 				id = i*countWidth + j;
 				listTile->insert(pair<int, Tile*>(id, new Tile(value, posX, posY)));
 			}

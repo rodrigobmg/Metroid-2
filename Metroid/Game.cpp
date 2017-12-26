@@ -233,11 +233,7 @@ void CGame::GameRun()
 			frame_start = now;
 			RenderFrame();
 		}
-<<<<<<< HEAD
-
-=======
 		
->>>>>>> 4d41ca4be8ebf3768d7d854b952cb4081057ddbb
 		ProcessKeyBoard();
 
 		ProcessInput(G_Device, _DeltaTime);

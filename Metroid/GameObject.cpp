@@ -108,6 +108,40 @@ ECollisionDirect GameObject::GetCollisionDirect(float normalx, float normaly)
 	return ECollisionDirect::Colls_None;
 }
 
+ECollisionDirect GameObject::GetCollisionDirect(GameObject* other)
+{
+	float x = this->posX - other->posX;
+	float y = this->posY - other->posY;
+	if (abs(x) > abs(y)) {
+		if (x < 0 && x > -36) 
+			return ECollisionDirect::Colls_Left;
+		else if (x > 0 && x < 36)
+ 			return ECollisionDirect::Colls_Right;
+	}
+	else
+	{
+		if (y < 0) 
+			return ECollisionDirect::Colls_Top;
+		else
+			return ECollisionDirect::Colls_Bot;
+	}
+	/*Box _myBox = this->GetBox();
+	Box _yourBox = other->GetBox();
+	if (_myBox.x + _myBox.w <= _yourBox.x) {
+		return ECollisionDirect::Colls_Left;
+	}
+	if (_myBox.x >= _yourBox.x+_yourBox.w) {
+		return ECollisionDirect::Colls_Right;
+	}
+	if (_myBox.y + _myBox.h <= _yourBox.y) {
+		return ECollisionDirect::Colls_Top;
+	}
+	if (_myBox.y >= _yourBox.y + _yourBox.h) {
+		return ECollisionDirect::Colls_Bot;
+	}*/
+	return ECollisionDirect::Colls_None;
+}
+
 void GameObject::Remove()
 {
 	active = false;
@@ -125,7 +159,8 @@ void GameObject::ReceiveDamage(int damagePoint)
 
 Box GameObject::GetBox()
 {
-	Box result(posX - width / 2, posY + height / 2, width, height);
+	//Box result(posX - width / 2, posY + height / 2, width, height);
+	Box result(posX, posY + height / 2, width, height);
 	return result;
 }
 

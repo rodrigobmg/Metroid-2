@@ -30,6 +30,8 @@ public:
 	bool _hasTurnUp;
 	bool _isDraw;
 	
+	//dem so object va cham
+	int _demVaCham;
 	//----------------Khoi Tao
 	Samus(void);
 	Samus(int, int);
@@ -51,7 +53,9 @@ public:
 
 	void Initialize();
 	D3DXVECTOR2* getPos();
-	
+	GameObject* _lastCollidedGround;
+	ECollisionDirect _curCollideDir;
+	GameObject* _sideCollidedGround;
 };
 
 #endif

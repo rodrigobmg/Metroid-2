@@ -19,6 +19,8 @@ Samus::Samus(int _posX, int _posY) : DynamicObject(_posX, _posY, 0, -SPEED_Y, En
 	_hasShot = false;
 	_heightJump = 0.0f;
 	_isDraw = true;
+	_demVaCham = 0;
+	_lastCollidedGround = nullptr;
 	bullet = new list<Bullet*>();;
 	samusJump1 = new CSprite(Singleton::getInstance()->getTexture(EnumID::SamusJump1_ID), 0, 0, 300);
 	samusJump2 = new CSprite(Singleton::getInstance()->getTexture(EnumID::SamusJump2_ID), 0, 3, 10);
@@ -120,9 +122,10 @@ void Samus::Collision(list<GameObject*> &obj, float dt)
 
 		Box boxSamus = this->GetBox();
 		Box boxOther = other->GetBox();
-
+		_allowPress = true;
 		if (AABB(boxSamus, boxOther, moveX, moveY) == true)
 		{
+			_demVaCham++;
 
 			switch (other->id)
 			{
@@ -130,25 +133,49 @@ void Samus::Collision(list<GameObject*> &obj, float dt)
 			case EnumID::Ground1_ID:
 			case EnumID::Ground4_ID:
 			case EnumID::Ground6_ID:
+			{
 				//_onMovingPlatform = false;
-
+				
+				ECollisionDirect dir = this->GetCollisionDirect(other);
+				if (dir == ECollisionDirect::Colls_Left || dir == ECollisionDirect::Colls_Right) {
+					
+					if (_curCollideDir == dir)
+					{
+						vX = 0;
+					}
+					
+					_curCollideDir = dir;
+					_sideCollidedGround = other;
+					//posX += moveX;
+					
+					//vX = 0;
+				}
+				else if (_sideCollidedGround == other)
+				{
+					_curCollideDir = ECollisionDirect::Colls_None;
+					_sideCollidedGround = nullptr;
+				}
+				
+				_lastCollidedGround = other;
 				if (moveY > 0)
 				{
 					posY += moveY;
 					if ((_hasJump))
 					{
 						_hasJump = false;
-						
+
 						vY = 0;
 						vX = 0;
 					}
 					else
-						if (!_hasJump)
-						{
-							vY = 0;
-							onLand = true;
-						}
+					{
+						vY = 0;
+						onLand = true;
+
+					}
 				}
+
+
 
 				//Xu ly rot khoi cuc gach
 				if ((!onLand) && !_hasJump)
@@ -157,11 +184,22 @@ void Samus::Collision(list<GameObject*> &obj, float dt)
 				}
 				break;
 #pragma endregion Va cham Gach
-
+			}
 			default:
 
 				break;
 			}
+		}
+		else if (_lastCollidedGround == other && !_hasJump) 
+		{
+			_lastCollidedGround = nullptr;
+			onLand = false;
+			vY = -(SPEED_Y);
+		}
+		else if (_sideCollidedGround == other)
+		{
+			_sideCollidedGround = nullptr;
+			_curCollideDir = ECollisionDirect::Colls_None;
 		}
 	}
 }
@@ -231,22 +269,23 @@ void Samus::Draw(CCamera* camera)
 
 void Samus::TurnLeft()
 {
-	if (_allowPress)
+	if (_allowPress && _curCollideDir != ECollisionDirect::Colls_Right)
 	{
 		vX = -SPEED_X;
 		_vLast = vX;
 		_action = Action::Run_Left;
+		_curCollideDir = ECollisionDirect::Colls_None;
 	}
 }
 
 void Samus::TurnRight()
 {
-	if (_allowPress)
+	if (_allowPress && _curCollideDir != ECollisionDirect::Colls_Left)
 	{
 		vX = SPEED_X;
 		_vLast = vX;
 		_action = Action::Run_Right;
-
+		_curCollideDir = ECollisionDirect::Colls_None;
 	}
 }
 

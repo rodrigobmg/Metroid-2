@@ -1,6 +1,7 @@
 #ifndef _QBACKGROUND_H_
 #define _QBACKGROUND_H_
 
+
 #include <list>
 #include <map>
 //#include "Singleton.h"
@@ -10,7 +11,7 @@
 #include <conio.h>
 #include <string>
 #include <sstream>
-#include "QNode.h"
+//#include "QNode.h"
 #include "Tile.h"
 
 using namespace std;
