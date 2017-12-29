@@ -130,32 +130,34 @@ void Samus::Collision(list<GameObject*> &obj, float dt)
 			case EnumID::Ground1_ID:
 			case EnumID::Ground4_ID:
 			case EnumID::Ground6_ID:
-				//_onMovingPlatform = false;
+			{
+				//if (moveY > 0)
+				//{
+				//	posY += moveY;
+				//	if (_hasJump)
+				//	{
+				//		_hasJump = false;
 
-				if (moveY > 0)
-				{
-					posY += moveY;
-					if ((_hasJump))
-					{
-						_hasJump = false;
-						
-						vY = 0;
-						vX = 0;
-					}
-					else
-						if (!_hasJump)
-						{
-							vY = 0;
-							onLand = true;
-						}
-				}
+				//		vY = 0;
+				//		vX = 0;
+				//	}
+				//	else
+				//		if (!_hasJump)
+				//		{
+				//			vY = 0;
+				//			onLand = true;
+				//		}
+				//}
 
-				//Xu ly rot khoi cuc gach
-				if ((!onLand) && !_hasJump)
-				{
-					vY = -(SPEED_Y);
-				}
-				break;
+				////Xu ly rot khoi cuc gach
+				//if ((!onLand) && !_hasJump)
+				//{
+				//	vY = -(SPEED_Y);
+				//}
+				if()
+			}
+
+			break;
 #pragma endregion Va cham Gach
 
 			default:
@@ -165,6 +167,7 @@ void Samus::Collision(list<GameObject*> &obj, float dt)
 		}
 	}
 }
+
 
 
 void Samus::Draw(CCamera* camera)

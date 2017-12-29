@@ -1,4 +1,4 @@
-#ifndef _SWEPTAABB_
+﻿#ifndef _SWEPTAABB_
 #define _SWEPTAABB_
 #include <d3d9.h>
 #include <cmath>
@@ -38,12 +38,6 @@ struct Box
 };
 
 // returns true if the boxes are colliding (velocities are not used)
-static bool AABBCheck(Box b1, Box b2)
-{
-	return !(b1.x + b1.w < b2.x || b1.x > b2.x + b2.w || b1.y - b1.h > b2.y || b1.y < b2.y - b2.h);
-}
-
-// returns true if the boxes are colliding (velocities are not used)
 // moveX and moveY will return the movement the b1 must move to avoid the collision
 static bool AABB(Box b1, Box b2, float& moveX, float& moveY)
 {
@@ -71,19 +65,6 @@ static bool AABB(Box b1, Box b2, float& moveX, float& moveY)
 	return true;
 }
 
-// returns a box the spans both a current box and the destination box
-static Box GetSweptBroadphaseBox(Box b, int dt)
-{
-	Box broadphasebox(0.0f, 0.0f, 0.0f, 0.0f);
-
-	broadphasebox.x = b.vx > 0 ? b.x : b.x + b.vx * dt;
-	broadphasebox.y = b.vy < 0 ? b.y : b.y + b.vy *dt;
-	broadphasebox.w = b.vx > 0 ? b.vx * dt + b.w : b.w - b.vx * dt;
-	broadphasebox.h = b.vy > 0 ? b.vy * dt + b.h : b.h - b.vy * dt;
-
-	return broadphasebox;
-}
-
 // performs collision detection on moving box b1 and static box b2
 // returns the time that the collision occured (where 0 is the start of the movement and 1 is the destination)
 // getting the new position can be retrieved by box.x = box.x + box.vx * collisiontime
@@ -93,7 +74,7 @@ static float SweptAABB(Box b1, Box b2, float& normalx, float& normaly, int dt)
 	float xInvEntry, yInvEntry;
 	float xInvExit, yInvExit;
 
-	// find the distance between the objects on the near and far sides for both x and y
+	//Tìm khoảng cách giữa 2 vật thể ở cạnh gần và cạnh xa
 	if (b1.vx > 0.0f)
 	{
 		xInvEntry = b2.x - (b1.x + b1.w);
@@ -105,7 +86,7 @@ static float SweptAABB(Box b1, Box b2, float& normalx, float& normaly, int dt)
 		xInvExit = b2.x - (b1.x + b1.w);
 	}
 
-	if (b1.vy < 0.0f)
+	if (b1.vy > 0.0f)
 	{
 		yInvEntry = b2.y - (b1.y - b1.h);
 		yInvExit = (b2.y - b2.h) - b1.y;
@@ -116,7 +97,7 @@ static float SweptAABB(Box b1, Box b2, float& normalx, float& normaly, int dt)
 		yInvExit = b2.y - (b1.y - b1.h);
 	}
 
-	// find time of collision and time of leaving for each axis (if statement is to prevent divide by zero)
+	//Tìm thời gian va chạm và thời gian kết thúc va chạm cho mỗi trục
 	float xEntry, yEntry;
 	float xExit, yExit;
 
@@ -142,18 +123,20 @@ static float SweptAABB(Box b1, Box b2, float& normalx, float& normaly, int dt)
 		yExit = yInvExit / (b1.vy * dt);
 	}
 
-	// find the earliest/latest times of collision
-	float entryTime = max(xEntry, yEntry);
-	float exitTime = min(xExit, yExit);
+	//Tìm thời điểm bắt đầu va chạm và thời điểm kết thúc va chạm
+	float entryTime = max(xEntry, yEntry); //thời điểm bắt đầu va chạm
+	float exitTime = min(xExit, yExit); //thời điểm kết thúc va chạm
 
-	// if there was no collision
+										//Tính toán xem va chạm có xảy ra hay không
+										//Nếu không có va chạm
 	if (entryTime > exitTime || xEntry < 0.0f && yEntry < 0.0f || xEntry > 1.0f || yEntry > 1.0f)
 	{
 		normalx = 0.0f;
 		normaly = 0.0f;
-		return 1.0f;
+		return 1.0f; //không có va chạm
 	}
-	else // if there was a collision
+	//Nếu có va chạm
+	else
 	{
 		// calculate normal of collided surface
 		if (xEntry > yEntry)
@@ -190,3 +173,27 @@ static float SweptAABB(Box b1, Box b2, float& normalx, float& normaly, int dt)
 
 
 #endif
+
+
+
+
+
+//Kiểm tra diện rộng
+// returns a box the spans both a current box and the destination box
+static Box GetSweptBroadphaseBox(Box b, int dt)
+{
+	Box broadphasebox(0.0f, 0.0f, 0.0f, 0.0f);
+
+	broadphasebox.x = b.vx > 0 ? b.x : b.x + b.vx * dt;
+	broadphasebox.y = b.vy < 0 ? b.y : b.y + b.vy *dt;
+	broadphasebox.w = b.vx > 0 ? b.w + b.vx * dt : b.w - b.vx * dt;
+	broadphasebox.h = b.vy > 0 ? b.h + b.vy * dt : b.h - b.vy * dt;
+
+	return broadphasebox;
+}
+
+// returns true if the boxes are colliding (velocities are not used)
+static bool AABBCheck(Box b1, Box b2)
+{
+	return !(b1.x + b1.w < b2.x || b1.x > b2.x + b2.w || b1.y - b1.h > b2.y || b1.y < b2.y - b2.h);
+}
