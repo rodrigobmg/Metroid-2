@@ -35,6 +35,7 @@ public:
 	virtual void CreateSprite();
 	virtual void Collision(list<GameObject*> obj, int dt);
 	ECollisionDirect GetCollisionDirect(float normalx, float normaly);
+	ECollisionDirect GetCollisionDirect(GameObject* other);
 	virtual Box GetBox();
 	virtual void SetActive(float x, float y);
 	virtual void SetActive();

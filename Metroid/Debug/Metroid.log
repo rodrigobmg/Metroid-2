@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Samus.cpp
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
 f:\projects\metroid\metroid\samus.cpp(12): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -20,12 +21,27 @@ f:\projects\metroid\metroid\samus.cpp(124): error C4700: uninitialized local var
 f:\projects\metroid\metroid\samus.cpp(124): error C4700: uninitialized local variable 'moveX' used
   Compiling...
   main.cpp
+=======
+<<<<<<< HEAD
+﻿  SceneGame.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  QBackground.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\domiter\documents\github\metroid\metroid\qbackground.cpp(44): warning C4101: '_obj': unreferenced local variable
+c:\users\domiter\documents\github\metroid\metroid\qbackground.cpp(70): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+  Global.cpp
+=======
+﻿  Utils.cpp
+  Tile.cpp
+  Singleton.cpp
+>>>>>>> df0c4e664d105311f2419687410272b4aa630c28
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
   SceneMenu.cpp
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
   SceneMain.cpp
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
   SceneGame.cpp
+>>>>>>> 4d41ca4be8ebf3768d7d854b952cb4081057ddbb
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
 f:\projects\metroid\metroid\scenegame.cpp(29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 f:\projects\metroid\metroid\scenegame.cpp(34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
